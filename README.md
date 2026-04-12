@@ -45,3 +45,7 @@ sudo nmcli connection up "Wired connection 1"
 切换到 IPv6 选项卡，选择“禁用”。点击“应用”，然后关闭并重新打开有线连接（或重启 NetworkManager）。
 
 你可以使用`ip a`命令来检查你的网络设置是否设置。
+
+### 项目结构
+
+jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`
