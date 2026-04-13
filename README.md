@@ -4,7 +4,9 @@ jlu-drcom是适用于Arch Linux的吉林大学校园网登录认证客户端。
 
 ## 安装
 
-### AUR
+### Arch Linux
+
+#### AUR
 
 `paru -S jlu-drcom-bin`
 
@@ -12,11 +14,31 @@ jlu-drcom是适用于Arch Linux的吉林大学校园网登录认证客户端。
 
 `yay -S jlu-drcom-bin`
 
+### 其他发行版
+
+```bash
+
+git clone --depth 1 https://github.com/hnchengzong/jlu-drcom.git
+
+cd ./jlu-drcom
+
+# 在运行前建议先根据README.md中的说明进行配置
+./DrClientLinux
+
+
+```
+
 ## 运行
 
-在终端中输入`jlu-drcom`
+在终端中输入`jlu-drcom`。在使用前可以先`sudo jlu-config`进行配置。
 
-## 网络设置
+## 配置
+
+### 自动配置
+
+Arch Linux用户可以使用`sudo jlu-config`，其他发行版可以运行该项目中的hn-install.sh脚本。网络配置只支持NetworkManager。
+
+### 手动网络设置（NetworkManager）
 
 - 使用客户端登录时，连接Wi-Fi时不需要设置IP、子网掩码、DNS和网关。但是使用有线网络(wired connection 1)时必须全部设置。IP，网关等可以在`login.jlu.edu.cn`中登录查看。如果你使用networkmanager，请按照一下指令配置。
 
@@ -46,11 +68,7 @@ sudo nmcli connection up "Wired connection 1"
 
 你可以使用`ip a`命令来检查你的网络设置是否设置。
 
-## 项目结构
-
-jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`
-
-## 常见问题
+### 手动配置自动登录
 
 Q: 如何自动保存密码、自动登录？客户端的自动保存、自动登录功能没有用？
 
@@ -93,6 +111,10 @@ Ext=
 EOF
 
 ```
+
+## 项目结构
+
+jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`
 
 ## 版权与免责声明
 
