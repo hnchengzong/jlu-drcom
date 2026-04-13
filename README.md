@@ -50,6 +50,50 @@ sudo nmcli connection up "Wired connection 1"
 
 jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`
 
+## 常见问题
+
+Q: 如何自动保存密码、自动登录？客户端的自动保存、自动登录功能没有用？
+
+A: 自动保存、自动登录功能需要文件`DrClientConfig`在软件目录下。格式如下：
+
+```ini
+
+[DrClientConfig]
+Account=你的账户名
+Password="你的密码的base64编码"
+Adapter= ; 参数非必要
+AutoLogin=1 ; 自动登录
+SavePassword=1 ; 保存密码
+Ext= ; 参数非必要
+
+```
+
+你可以运行下面代码创建。
+
+```bash
+
+# 切换到软件目录
+cd /opt/drclient
+
+# 创建文件
+sudo touch DrClientConfig
+
+# 确保权限正确
+sudo chmod 644 ./DrClientConfig
+
+# 写入文件，你也可以使用vim等编辑器手动填写
+sudo cat > DrClientConfig << 'EOF'
+[DrClientConfig]
+Account=你的账户名
+Password="你的密码的base64编码"
+Adapter=
+AutoLogin=1
+SavePassword=1
+Ext=
+EOF
+
+```
+
 ## 版权与免责声明
 
 ### 版权归属
