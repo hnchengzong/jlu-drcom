@@ -103,7 +103,7 @@ sudo chmod 644 ./DrClientConfig
 sudo cat > DrClientConfig << 'EOF'
 [DrClientConfig]
 Account=你的账户名
-Password="你的密码的base64编码"
+Passoword="你的密码的base64编码"
 Adapter=
 AutoLogin=1
 SavePassword=1
