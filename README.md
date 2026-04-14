@@ -114,7 +114,7 @@ EOF
 
 ## 项目结构
 
-jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`
+jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件,但是删除了官方的配置脚本，改成以`sudo`运行`hn-install.sh`来配置网络和信息。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`。
 
 ## 版权与免责声明
 
