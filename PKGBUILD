@@ -8,10 +8,10 @@ url="https://github.com/hnchengzong/jlu-drcom"
 license=('custom')
 depends=()
 makedepends=()
-source=("jlu-drcom-$pkgver.tar.xz")
+source=("jlu-drcom.tar.xz")
 sha256sums=('SKIP')   
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname"
 
   install -d "$pkgdir/opt/drclient/translator"
 
