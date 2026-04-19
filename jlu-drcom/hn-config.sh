@@ -5,15 +5,6 @@ set -euo pipefail
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 
-if [[ "$(id -u)" -ne 0 ]]; then
-    echo -e "\033[31m错误：必须使用 sudo 运行此脚本\033[0m"
-    echo "Arch Linux用户可以使用 sudo jlu-config(AUR)"
-    exit 1
-fi
-
-JLU_CONFIG="/opt/drclient/DrClientConfig"
-WIRED="Wired connection 1"
-
 GREEN="\033[32m"
 YELLOW="\033[33m"
 RED="\033[31m"
@@ -21,6 +12,16 @@ BLUE="\033[34m"
 CYAN="\033[36m"
 PURPLE="\033[35m"
 RESET="\033[0m"
+
+if [[ "$(id -u)" -ne 0 ]]; then
+    echo -e "${RED}错误：必须使用 sudo 运行此脚本${RESET}"
+    echo "Arch Linux用户可以使用 sudo jlu-config(AUR)"
+    exit 1
+fi
+
+JLU_CONFIG="/opt/drclient/DrClientConfig"
+WIRED="Wired connection 1"
+
 
 clear
 
