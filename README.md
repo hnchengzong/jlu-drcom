@@ -1,10 +1,10 @@
-# jlu-drcom
-
-jlu-drcom是适用于Arch Linux的吉林大学校园网登录认证客户端。
+# jlu-drcom-linux
 
 ![Arch Linux](https://img.shields.io/badge/Arch-Linux-blue?logo=archlinux&logoColor=white)
 
 ![moe-counter](https://count.getloli.com/@jlu-drcom?theme=booru-lewd&padding=7&offset=0&align=top&scale=1&pixelated=1&darkmode=auto)
+
+jlu-drcom-Lionel是适用于Linux的吉林大学校园网登录认证客户端。主要适用于Arch Linux。
 
 ## 安装
 
@@ -17,6 +17,21 @@ jlu-drcom是适用于Arch Linux的吉林大学校园网登录认证客户端。
 如果你使用yay
 
 `yay -S jlu-drcom-bin`
+
+### Debian
+
+```bash
+wget https://github.com/hnchengzong/jlu-drcom-linux/releases/download/v1.2.2/jlu-drcom_1.2.2_amd64.deb
+sudo dpkg -i jlu-drcom_1.2.2_amd64.deb
+```
+
+### appimage
+
+```bash
+wget https://github.com/hnchengzong/jlu-drcom-linux/releases/download/v1.2.2/jlu-drcom-1.2.2-x86_64.AppImage
+chmod +x jlu-drcom-1.2.2-x86_64.AppImage
+./jlu-drcom-1.2.2-x86_64.AppImage
+```
 
 ### 其他发行版
 
