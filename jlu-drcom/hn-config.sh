@@ -19,22 +19,27 @@ if [[ "$(id -u)" -ne 0 ]]; then
     exit 1
 fi
 
-JLU_CONFIG="/opt/drclient/DrClientConfig"
-WIRED="Wired connection 1"
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
+JLU_CONFIG="${SCRIPT_DIR}/DrClientConfig"
 
+WIRED=$(nmcli -t -f NAME,TYPE connection show | grep -E 'ethernet' | head -1 | cut -d: -f1)
+
+# 如果探测的客户端地址和有线网络连接不对，你可以手动设置。例如JLU_CONFIG="/opt/drclient/DrClientConfig"，WIRED="Wired connection 1"。
 
 clear
 
 echo -e "${GREEN}=================================================${RESET}"
 echo -e "${YELLOW}jlu-drcom配置工具${RESET}"
 echo -e "${BLUE}作者：HN程宗（hnchengzong） ${RESET}"
-echo -e "${PURPLE}项目地址：https://github.com/hnchengzong/jlu-drcom${RESET}"
+echo -e "${PURPLE}项目地址：https://github.com/hnchengzong/jlu-drcom-linux${RESET}"
 echo -e "${GREEN}=================================================${RESET}"
 echo
 
 echo -e "${YELLOW}要使用有线网络必须设置IP、网关、DNS、子网掩码等${RESET}"
 echo
 
+echo -e "${BLUE}探测到客户端所在目录${JLU_CONFIG}${RESET}"
+echo -e "${BLUE}探测到有线网络${WIRED}${RESET}"
 
 read -rp "是否配置自动登录？[y/N] " confirm_login
 

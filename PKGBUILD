@@ -1,14 +1,14 @@
 # Maintainer: hnchengzong
-pkgname=jlu-drcom
-pkgver=1.2.1
+pkgname=jlu-drcom-bin
+pkgver=1.2.2
 pkgrel=1
 pkgdesc="吉林大学校园网客户端"
 arch=('x86_64')
-url="https://github.com/hnchengzong/jlu-drcom"
-license=('custom')
+url="https://github.com/hnchengzong/jlu-drcom-linux"
+license=('MIT')
 depends=()
 makedepends=()
-source=("jlu-drcom.tar.xz")
+source=("https://github.com/hnchengzong/jlu-drcom-linux/releases/download/v$pkgver/jlu-drcom-$pkgver.tar.xz")
 sha256sums=('SKIP')   
 package() {
   cd "$srcdir/$pkgname"
