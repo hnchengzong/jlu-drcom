@@ -138,6 +138,10 @@ EOF
 
 ```
 
+Q：软件包安装时设置了SUID位。
+
+A: 这是软件启动必须的，不然会显示让你运行privilege.sh来进行安装。
+
 ## 项目结构
 
 jlu-drcom-1.0.0存放着吉林大学官网的Linux版本客户端文件,但是删除了官方的配置脚本，改成以`sudo`运行`hn-config.sh`来配置网络和信息，此外还重写了`hostinfo.sh`,`pppoe-status`等文件。将这个文件`tar -cJf jlu-drcom-1.0.0.tar.xz ./jlu-drcom-1.0.0`打包成jlu-drcom-1.0.0.tar.xz后根据PKGBUILD。在当前目录目录运行`makepkg -si`安装。release的文件即为打包生成的`jlu-drcom-1.0.0-1-x86_64.pkg.tar.zst`。

@@ -9,7 +9,7 @@ license=('MIT')
 depends=()
 makedepends=()
 source=("https://github.com/hnchengzong/jlu-drcom-linux/releases/download/v$pkgver/jlu-drcom-$pkgver.tar.xz")
-sha256sums=('SKIP')   
+sha256sums=('SKIP')
 package() {
   cd "$srcdir/jlu-drcom"
 
@@ -30,6 +30,7 @@ package() {
 
   chown root:root "$pkgdir/opt/drclient/drcomauthsvr"
   chmod 4755 "$pkgdir/opt/drclient/drcomauthsvr"
+  # 必须设置 SUID 位。
 
   install -d "$pkgdir/usr/bin"
   cat > "$pkgdir/usr/bin/jlu-drcom" << 'EOF'
@@ -41,7 +42,6 @@ EOF
   cat > "$pkgdir/usr/bin/jlu-config" << 'EOF'
 #!/bin/sh
 cd /opt/drclient || exit 1
-export LD_LIBRARY_PATH=/opt/drclient:$LD_LIBRARY_PATH
 exec /opt/drclient/hn-config.sh "$@"
 EOF
 
